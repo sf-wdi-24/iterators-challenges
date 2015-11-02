@@ -78,7 +78,10 @@ function pluck(arr, key){
   }
   return outputArr;
 }
+```
 
+## where
+```
 function where(arr, properties){
   var outputArr = [];
   var obj;
