@@ -1,3 +1,7 @@
+# Solutions
+
+## each
+```
 // `each` takes in an array and a callback function
 var each = function(list, callback) {
   // iterates through each item in array
@@ -8,7 +12,10 @@ var each = function(list, callback) {
   // returns original array
   return list;
 };
+```
 
+## map
+```
 // `map` takes in an array and a callback function
 var map = function(list, callback) {
   var mappedList = [];
@@ -20,7 +27,10 @@ var map = function(list, callback) {
   // returns mapped array of results
   return mappedList;
 };
+```
 
+## reduce
+```
 // `reduce` takes in an array of numbers
 var reduce = function(numList) {
   var sum = 0;
@@ -29,10 +39,10 @@ var reduce = function(numList) {
   }
   return sum;
 };
+```
 
-
-
-
+## truthTest
+```
 function filter(arr, truthTest){
   var outputArr = [];
   for (var i=0; i<arr.length; i++){
@@ -42,8 +52,10 @@ function filter(arr, truthTest){
   }
   return outputArr;
 }
+```
 
-
+## partition
+```
 function partition(arr, truthTest){
   var trueArr = [];
   var falseArr = [];
@@ -56,8 +68,9 @@ function partition(arr, truthTest){
   }
   return [trueArr, falseArr];
 }
-
-
+```
+## pluck
+```
 function pluck(arr, key){
   var outputArr = [];
   for (var i=0; i<arr.length; i++){
@@ -79,3 +92,4 @@ function where(arr, properties){
   }
   return outputArr;
 }
+```
