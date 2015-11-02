@@ -4,7 +4,7 @@ Tonight you'll be implementing iterator functions as an extension of the lesson 
 
 **Note:** DO NOT use any built-in iterator functions. You will often be asked in interviews to implement well-known methods like this from scratch as problem-solving exercises.
 
-## Problems
+## Challenges
 
 1. Write a function called `each` that takes in an array and a callback function. `each` should iterate through all items in the array and call the callback function with each item and its index as parameters. `each` should return the original array that was passed in.
 
@@ -39,7 +39,12 @@ Tonight you'll be implementing iterator functions as an extension of the lesson 
 	// => [[1, 3, 5], [0, 2, 4]]
 	```
 
-	Write a function called `partition` that takes in an array and another function (a truth test).  `partition` should split the array into two groups: one whose elements all pass the truth test and one whose elements all fail. It should return a new array with the two groups nested inside.
+
+Write a function called `partition` that takes in an array and another function (a truth test).  `partition` should split the array into two groups: one whose elements all pass the truth test and one whose elements all fail. It should return a new array with the two groups nested inside.
+
+
+## Stretch Challenges
+
 
 6. `pluck(arr, key)`
 
@@ -54,6 +59,7 @@ Tonight you'll be implementing iterator functions as an extension of the lesson 
 	pluck(grandparents, 'first');
 	// =>["June", "Jim", "Linda", "Panfilo"]
 	```
+
 
 	Write a function called `pluck` that takes in an array of objects and a key. `pluck` should iterate through the array, pick out the value each object has associated with the given key, and return a new array containing those values.
 
