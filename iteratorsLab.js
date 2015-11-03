@@ -95,7 +95,12 @@ events = [
       {location: "GA", day: "Tuesday", time: "1830"},
       {location: "Blue Bottle", day: "Tuesday", time: "1100"},
       {location: "GA", day: "Thursday", time: "1830"},
-      {location: "GA", day: "Thursday", time: "0917"}
+      {location: "GA", day: "Monday", time: "0917"},
+      {location: "GA", day: "Friday", time: "0917"},
+      {location: "Blue", day: "Thursday", time: "0917"},
+      {location: "Michigan", day: "Wednesday", time: "0917"},
+      {location: "GA", day: "Saturday", time: "1830"},
+      {location: "GA", day: "Thursday", time: "1111"}
       ];
 
 function where(arr, properties){
@@ -110,3 +115,22 @@ function where(arr, properties){
 	return newArr;
 }
 console.log(where(events, {time: "1830", location: "GA"}));
+
+function whereWithMultiProp(newArr, properties){
+	var indexArray = [];
+	for(var x in newArr){
+		for(var i in properties){
+			if(newArr[x][i] !== properties[i]){
+				if(indexArray.indexOf(x) === -1){
+					indexArray.push(x);
+				}
+			}
+		}
+	}
+	var iArray = indexArray.reverse();
+	for(var y in iArray){
+		newArr.splice(iArray[y],1);
+	}
+	return newArr;
+}
+console.log(whereWithMultiProp(events, {time: "1830", location: "GA"}));
