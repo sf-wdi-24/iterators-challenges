@@ -74,7 +74,7 @@ function where(arr, matchObj) {
 			matchCount++;
 			}
 		}
-		//MUST match all keys and their value ob matchObj
+		//MUST match all keys and their value of matchObj
 		//Object.keys(object-name).length >> get length of object
 		if (matchCount == Object.keys(matchObj).length) result.push(arr[i]);
 	}
