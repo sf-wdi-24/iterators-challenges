@@ -1,7 +1,8 @@
 # Solutions
 
 ## each
-```
+
+```js
 // `each` takes in an array and a callback function
 var each = function(list, callback) {
   // iterates through each item in array
@@ -15,7 +16,8 @@ var each = function(list, callback) {
 ```
 
 ## map
-```
+
+```js
 // `map` takes in an array and a callback function
 var map = function(list, callback) {
   var mappedList = [];
@@ -30,7 +32,8 @@ var map = function(list, callback) {
 ```
 
 ## reduce
-```
+
+```js
 // `reduce` takes in an array of numbers
 var reduce = function(numList) {
   var sum = 0;
@@ -42,7 +45,8 @@ var reduce = function(numList) {
 ```
 
 ## truthTest
-```
+
+```js
 function filter(arr, truthTest){
   var outputArr = [];
   for (var i=0; i<arr.length; i++){
@@ -55,7 +59,8 @@ function filter(arr, truthTest){
 ```
 
 ## partition
-```
+
+```js
 function partition(arr, truthTest){
   var trueArr = [];
   var falseArr = [];
@@ -69,8 +74,10 @@ function partition(arr, truthTest){
   return [trueArr, falseArr];
 }
 ```
+
 ## pluck
-```
+
+```js
 function pluck(arr, key){
   var outputArr = [];
   for (var i=0; i<arr.length; i++){
@@ -81,15 +88,20 @@ function pluck(arr, key){
 ```
 
 ## where
-```
-function where(arr, properties){
-  var outputArr = [];
-  var obj;
-  for (var i=0; i<arr.length; i++){
-    obj = arr[i];
-    for (key in obj){
-      if (obj.hasOwnProperty(key) && obj[key] === properties[key]){
-          outputArr.push(obj);
+
+```js
+function where(arr, properties) {
+  var outputArr = []
+
+  // loop through keys in properties
+  for (var key in properties) {
+    for (var i = 0; i < arr.length; i++) {
+      var obj = arr[i]
+
+      // if values are the same and obj is not already in outputArr
+      if (properties[key] === obj[key] && outputArr.indexOf(obj) === -1) {
+        // push obj into outputArr
+        outputArr.push(obj);
       }
     }
   }
