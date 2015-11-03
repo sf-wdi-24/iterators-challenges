@@ -72,7 +72,7 @@ Write a function called `partition` that takes in an array and another function 
 		{location: "GA", day: "Tuesday", time: "1830"},
 		{location: "Blue Bottle", day: "Tuesday", time: "1100"},
 		{location: "GA", day: "Thursday", time: "1830"},
-		{location: "GA", day "Thursday", time: "0917"}
+		{location: "GA", day: "Thursday", time: "0917"}
 		];
 
 	where(events, {time: "1830", location: "GA"});
