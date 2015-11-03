@@ -1,0 +1,203 @@
+Write a function called each that takes in an array and a callback function. each should iterate through all items in the array and call the callback function with each item and its index as parameters. each should return the original array that was passed in.
+
+
+var array = [1, 2, 3, 4];
+var each = function(arr, callback){
+	var new_arr=[]
+	for (var i = 0; i<arr.length; i++){
+	 	new_arr[i]= callback(arr[i], i);
+
+	}
+	return arr;
+}
+
+function return_array(number, index){
+	return number;
+}
+
+each(array, return_array);
+
+//if we should mutiply arr in 5 with foreach- arr.forEach(function(num){ return num})
+
+//Write a function called map that takes in an array and a callback function. map should iterate through all items in the array, call the callback function with each item and its index as parameters, and return a new array of the results.
+
+
+var array = [1, 2, 3, 4];
+var map = function(arr, callback){
+	var new_arr=[];
+	for (var i = 0; i<arr.length; i++){
+	 	new_arr[i]= callback(arr[i], i);
+
+	}
+	return new_arr;
+}
+
+function return_array(number, index){
+	return number;
+}
+
+var mapArray= map(array, return_array);
+
+//Write a function called reduce that takes in an array of numbers. reduce should return the sum of all the numbers in the array.
+
+var array = [1, 2, 3, 4];
+var reduce = function(arr){
+	var sum=0;
+	for (var i = 0; i<arr.length; i++){
+	 	sum+= arr[i];
+
+	}
+	return sum;
+}
+
+
+var sumReduce= reduce(array);
+
+
+//Write a function called filter that takes in an array and another function (a truth test). filter should iterate through the array, check whether each 
+//value passes the truth test function, and return a new array containing all the values that passed.
+
+
+var array = [1, 2, 3, 4];
+var filter = function (arr, callback){
+	var new_array=[];
+	for (var i = 0; i<arr.length; i++){	
+		if(callback(arr[i])){
+				new_array.push(arr[i])
+			}
+		}
+	return new_array;
+}
+
+function isOdd(item){
+	return (item%2!==0);
+}
+
+filter(array, isOdd);
+
+//Write a function called partition that takes in an array and another function (a truth test). partition should split the array into two groups: one 
+//whose elements all pass the truth test and one whose elements all fail. It should return a new array with the two groups nested inside.
+
+var array = [1, 2, 3, 4];
+var partition  = function (arr, callback){
+	var new_array=[[],[]];
+	var first = 0;
+	var second = 0;
+
+	for (var i = 0; i<arr.length; i++){	
+		if(callback(arr[i])){
+			new_array[0][first] = arr[i];
+			first+=1;
+		}
+		else{
+			new_array[1][second] = arr[i];
+			second+=1;
+		}
+		}
+	return new_array;
+}
+
+function isOdd(item){
+	return (item%2!==0);
+}
+
+var checkArray = partition(array,isOdd);
+
+
+//Write a function called pluck that takes in an array of objects and a key. pluck should iterate through the array, pick out the value each object has 
+//associated with the given key, and return a new array containing those values.
+
+
+var grandparents = [
+    {first: "June", last: "Crane", age: 74},
+    {first: "Jim", last: "Crane", age:76},
+    {first: "Linda", last: "Fuentes", age: 62},
+    {first: "Panfilo", last: "Fuentes", age: 76}
+    ];
+
+ var pluck = function (arr, key){
+ var newArray = [];
+ for(var i = 0; i<arr.length; i++){
+    for(var idx in arr[i]){
+    	if(idx===key){
+        	newArray.push(arr[i][idx]);
+    	}
+    }
+ }
+ return newArray;
+ }
+ 
+ pluck(grandparents, "age");
+
+
+//Write a function called where that takes an array of objects and another object. where looks through each object in the array, returning a new array 
+//containing the objects that match every key-value pair given in the second argument.
+
+var events = [
+      {location: "Yerba Buena", day: "Wednesday", time: "0900"},
+      {location: "GA", day: "Tuesday", time: "1830"},
+      {location: "Blue Bottle", day: "Tuesday", time: "1100"},
+      {location: "GA", day: "Thursday", time: "1830"},
+      {location: "GA", day: "Thursday", time: "0917"}
+      ];
+
+ var where = function(arr, obj){
+ var newArray = []; 
+ var objKeys = Object.keys(obj);
+ var itemKeys = [];
+ var check = "no";
+ for(var i = 0; i<arr.length; i++){
+ 	itemKeys=Object.keys(arr[i]);
+ 		for(var j = 0; j<objKeys.length; j++){
+ 			for(var k = 0; k<itemKeys.length; k++){
+ 				check = "no";
+ 				if ((objKeys[j] === itemKeys[k]) && (obj[objKeys[j]] === arr[i][itemKeys[k]])){
+ 				check = "yes";
+ 				break;
+ 				}
+ 			}
+ 			if(check !== "yes"){
+ 			break;
+ 		}
+ 		}
+ 		if(check === "yes"){
+ 		newArray.push(arr[i]);
+ 		}
+ }
+ return newArray;
+ };
+ 	
+ 			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
