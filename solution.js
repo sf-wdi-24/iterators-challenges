@@ -40,7 +40,7 @@ function partition(arr, truthTest) {
 			fail.push(arr[i]);
 		}
 	}
-	return pass.concat(fail);
+	return [pass, fail];
 }
 
 function pluck(arr, key) {
