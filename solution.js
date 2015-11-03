@@ -53,9 +53,10 @@ function pluck(arr, key) {
 
 function where(arr, keys) {
     for (var x in keys) {
-        for (var i = arr.length - 1; i >=0; i--) {
+        for (var i = 0; i < arr.length; i ++) {
             if (arr[i][x] !== keys[x]) {
                 arr.splice(i, 1);
+                i--;
             }
         }
     }
