@@ -117,4 +117,17 @@ function where(arr, properties) {
   }
   return outputArr;
 }
+
+// ALTERNATE SOLUTION
+function where(arr, properties) {
+  for (var key in properties) {
+    for (var i = arr.length - 1; i >= 0; i--) {
+      var obj = arr[i];
+      if (obj[key] != properties[key]) {
+        arr.splice(i, 1);
+      }
+    }
+  }
+  return arr;
+}
 ```
