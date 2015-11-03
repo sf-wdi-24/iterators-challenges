@@ -83,12 +83,13 @@ function pluck (array, key) {
 // Stretch Challenge 2 //
 /////////////////////////
 
-function where (array, properties) {
-	var newArray = [];
-	for (var key in array) {
-	    if (array.hasOwnProperty(key)) {
-	    	newArray.push(array[x]);
-	    }
-	}
-	return newArray;
+  function where (array, properties) {
+	for (var key in properties) {
+		for (var i = 0; i < array.length; i++) {
+			if (array[i][key] !== properties[key]) {
+	    		array.splice(i,1);
+	    		}
+			}
+		}
+	return array;
 }
