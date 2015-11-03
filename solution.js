@@ -62,3 +62,21 @@ function where(arr, keys) {
     }
     return arr;
 }
+
+// alternate way to write where function
+
+function where(arr, matchObj) {
+	var result =[];
+	for (var i = 0; i < arr.length; i ++) {
+		var matchCount = 0;
+		for (var x in matchObj) {
+			if (matchObj[x] == arr[i][x]) {
+			matchCount++;
+			}
+		}
+		//MUST match all keys and their value ob matchObj
+		//Object.keys(object-name).length >> get length of object
+		if (matchCount == Object.keys(matchObj).length) result.push(arr[i]);
+	}
+	return result;
+}
