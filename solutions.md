@@ -91,18 +91,28 @@ function pluck(arr, key){
 
 ```js
 function where(arr, properties) {
-  var outputArr = []
+  var outputArr = [];
 
-  // loop through keys in properties
-  for (var key in properties) {
-    for (var i = 0; i < arr.length; i++) {
-      var obj = arr[i]
+  // loop through objects in array
+  for (var i = 0; i < arr.length; i++) {
+    var obj = arr[i];
 
-      // if values are the same and obj is not already in outputArr
-      if (properties[key] === obj[key] && outputArr.indexOf(obj) === -1) {
-        // push obj into outputArr
-        outputArr.push(obj);
+    // initially set matches to true (assuming all obj values match properties)
+    var matches = true;
+
+    // loop through keys in properties
+    for (var key in properties) {
+
+      // if value is NOT the same as obj value, set matches to false and break loop
+      if (properties[key] !== obj[key]) {
+        matches = false;
+        break;
       }
+    }
+
+    // if all obj values match properties, push obj into output array
+    if (matches) {
+      outputArr.push(obj);   
     }
   }
   return outputArr;
